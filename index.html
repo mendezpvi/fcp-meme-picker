@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Picker</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+
+  <link rel="stylesheet" href="./css/font.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <img src="./assets/image/pumpkin.png" alt="">
+      <h2>Pumpkin's Purrfect...</h2>
+      <h1>Meme Picker</h1>
+    </div>
+  </header>
+
+  <main class="main container">
+    <h3>Select Your Current Emotion</h3>
+
+    <div id="radios-wrap" class="radios-wrap"></div>
+
+    <div class="check-wrap">
+      <label for="gitf-check">Animated GIFs only</label>
+      <input type="checkbox" id="gitf-check">
+    </div>
+
+    <button type="button" id="get-img-btn" class="get-btn">Get Image</button>
+  </main>
+
+  <div class="meme-modal" id="meme-modal">
+    <button type="button" class="close-btn" id="close-btn">X</button>
+    <div id="meme-modal-inner"></div>
+  </div>
+
+  <footer class="attribution">
+    <small>Frontend Career Path by <a href="https://v2.scrimba.com/the-frontend-developer-career-path-c0j" target="_blank" rel="noreferrer">Scrimba</a> - Coded by <a href="https://github.com/mendezpvi/fcp-meme-picker" target="_blank" rel="noreferrer">VIMP</a></small>
+  </footer>
+  
+  <script type="module" src="./js/index.js"></script>
+</body>
+</html>
