@@ -10,6 +10,34 @@ radiosWrap.addEventListener("change", highlightCheckedOption)
 getImgBtn.addEventListener("click", renderMeme)
 closeBtn.addEventListener("click", closeModal)
 
+function getEmotions(cats) {
+  const emotionsArr = []
+  for (let cat of cats) {
+    for (let emotion of cat.emotionTags) {
+      if (!emotionsArr.includes(emotion)) {
+        emotionsArr.push(emotion)
+      }
+    }
+  }
+  return emotionsArr
+}
+
+function renderEmotionsRadios(cats) {
+  const emotionsAll = getEmotions(cats)
+  let radioItems = ''
+  for (let emotion of emotionsAll) {
+    radioItems += `
+      <div class="radio">
+        <label for="${emotion}">${emotion}</label>
+        <input type="radio" id="${emotion}" value="${emotion}" name="emotions">
+      </div>
+    `
+  }
+  radiosWrap.innerHTML = radioItems
+}
+renderEmotionsRadios(catsData)
+
+
 function highlightCheckedOption(e) {
   const radios = document.getElementsByClassName("radio")
   for (let radio of radios) {
@@ -18,25 +46,10 @@ function highlightCheckedOption(e) {
   document.getElementById(e.target.id).parentElement.classList.add("isChecked")
 }
 
+
 function closeModal() {
   memeModal.classList.remove("show-modal")
   memeModal.style.display = "none"
-}
-
-function renderMeme() {
-  const catObject = getSingleCatObject()
-  memeModal.style.display = "block"
-  memeModalInner.innerHTML = `<img src="${catObject.image}" alt="${catObject.alt}">`
-}
-
-function getSingleCatObject() {
-  const catsArr = getMatchingCatsArr()
-  if (catsArr.length === 1) {
-    return catsArr[0]
-  } else {
-    let newIndex = Math.floor( Math.random() * catsArr.length )
-    return catsArr[newIndex]
-  }
 }
 
 function getMatchingCatsArr() {
@@ -55,31 +68,18 @@ function getMatchingCatsArr() {
   }
 }
 
-
-function renderEmotionsRadios(cats) {
-  const emotionsAll = getEmotions(cats)
-  let radioItems = ''
-  for (let emotion of emotionsAll) {
-    radioItems += `
-      <div class="radio">
-        <label for="${emotion}">${emotion}</label>
-        <input type="radio" id="${emotion}" value="${emotion}" name="emotions">
-      </div>
-    `
+function getSingleCatObject() {
+  const catsArr = getMatchingCatsArr()
+  if (catsArr.length === 1) {
+    return catsArr[0]
+  } else {
+    let newIndex = Math.floor( Math.random() * catsArr.length )
+    return catsArr[newIndex]
   }
-  radiosWrap.innerHTML = radioItems
 }
 
-function getEmotions(cats) {
-  const emotionsArr = []
-  for (let cat of cats) {
-    for (let emotion of cat.emotionTags) {
-      if (!emotionsArr.includes(emotion)) {
-        emotionsArr.push(emotion)
-      }
-    }
-  }
-  return emotionsArr
+function renderMeme() {
+  const catObject = getSingleCatObject()
+  memeModal.style.display = "block"
+  memeModalInner.innerHTML = `<img src="${catObject.image}" alt="${catObject.alt}">`
 }
-
-renderEmotionsRadios(catsData)
