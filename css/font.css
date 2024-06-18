@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Josefin';
+  src: url('../assets/font/JosefinSans.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100 700;
+}
