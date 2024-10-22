@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Picker</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+
+  <link rel="stylesheet" href="./css/font.css">
+  <link rel="stylesheet" href="./css/index.css">
+
+  <script type="module" src="./js/index.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <img src="./assets/image/pumpkin.avif" alt="Pumpkin logo" class="site-logo">
+      <h1 class="site-title">Meme Picker</h1>
+      <h2 class="site-subtitle">Pumpkin's Purrfect...</h2>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="emotion-selection" aria-labelledby="emotion-selection-title">
+      <h3 class="emotion-selection-title" id="emotion-selection-title">Select Your Current Emotion</h3>
+      <form action="#" class="emotion-form" id="emotion-form"></form>
+      <div class="gifs-only">
+        <label for="gifs-only">Animated GIFs only</label>
+        <input type="checkbox" name="gifs-only" id="gifs-only">
+      </div>
+      <button type="button" class="get-image-btn" id="get-image-btn">Get Image</button>
+    </section>
+  </main>
+
+  <div class="meme-modal" id="meme-modal" aria-hidden="true" role="dialog">
+    <button type="button" class="modal-close-btn" id="meme-modal-close-btn">X</button>
+    <div class="modal-body" id="meme-modal-body"></div>
+  </div>
+
+  <footer class="attribution">
+    <p>Frontend Career Path by <a href="https://v2.scrimba.com/courses" target="_blank" rel="noopener noreferrer"
+        class="attribution-cta">Scrimba</a> - Developed by <a href="https://github.com/mendezpvi/fcp-meme-picker"
+        target="_blank" rel="noopener noreferrer" class="attribution-cta">VIMP</a></p>
+  </footer>
+</body>
+
+</html>
