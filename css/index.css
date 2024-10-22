@@ -1,0 +1,208 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+img {
+  max-inline-size: 100%;
+  vertical-align: middle;
+  font-style: italic;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+}
+
+:root {
+  --clr-1: #FFF;
+  --clr-2: #4A628A;
+  --clr-3: #7AB2D3;
+  --clr-4: #C62E2E;
+  --clr-5: #FFCFCF;
+}
+
+.container,
+.emotion-selection {
+  margin-inline: auto;
+  inline-size: 90vw;
+  max-inline-size: 20rem;
+}
+
+/* Header */
+
+.site-header {
+  background-color: var(--clr-2);
+  color: var(--clr-1);
+}
+
+.header-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .5em 1em;
+}
+
+.site-logo {
+  grid-row: span 2;
+  max-inline-size: 5rem;
+  justify-self: end;
+  align-self: end;
+}
+
+.site-title {
+  grid-column: 2/-1;
+  grid-row: 2/3;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.site-subtitle {
+  align-self: end;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Main */
+
+.emotion-selection {
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+.emotion-selection-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+/* Form */
+
+.emotion-form {
+  margin: 1em auto;
+  max-inline-size: 15rem;
+  border: 2px solid var(--clr-3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.radio {
+  padding: .6em 1em;
+  display: flex;
+  justify-content: space-between;
+
+  & label,
+  & input {
+    cursor: pointer;
+  }
+}
+
+.radio:not(:last-of-type) {
+  border-bottom: 1px solid var(--clr-3);
+}
+
+.highlight {
+  font-weight: bolder;
+  color: var(--clr-4);
+  accent-color: var(--clr-4);
+  background-color: var(--clr-5);
+}
+
+
+/* CheckBox */
+
+.gifs-only {
+  accent-color: var(--clr-4);
+
+  & label,
+  & input {
+    cursor: pointer;
+  }
+}
+
+/* Button */
+
+.get-image-btn {
+  margin-top: 1.5em;
+  padding: .6em 1.2em;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  background-color: var(--clr-2);
+  border: none;
+  border-radius: 5px;
+  color: var(--clr-1);
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.get-image-btn:hover {
+  background-color: var(--clr-4);
+}
+
+/* Modal */
+
+.meme-modal {
+  max-inline-size: 20rem;
+  padding: 2em 2em 1.5em;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-1);
+  border: 2px solid var(--clr-2);
+  border-radius: 8px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-close-btn {
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  font-weight: 800;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: var(--clr-4);
+  color: var(--clr-1);
+}
+
+.modal-body {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Attribution */
+
+.attribution {
+  margin: 2em 0 1em;
+  font-size: .8rem;
+  text-align: center;
+}
+
+.attribution-cta {
+  font-weight: 500;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+*:focus-visible {
+  outline-color: var(--clr-2);
+}
