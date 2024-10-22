@@ -22,6 +22,9 @@ img {
 }
 
 body {
+  min-block-size: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   font-family: 'Karla', sans-serif;
 }
 
@@ -43,6 +46,7 @@ body {
 /* Header */
 
 .site-header {
+  padding-top: 1.25em;
   background-color: var(--clr-2);
   color: var(--clr-1);
 }
@@ -152,6 +156,7 @@ body {
 /* Modal */
 
 .meme-modal {
+  inline-size: 100%;
   max-inline-size: 20rem;
   padding: 2em 2em 1.5em;
   display: none;
@@ -192,7 +197,7 @@ body {
 /* Attribution */
 
 .attribution {
-  margin: 2em 0 1em;
+  padding-block: 1em;
   font-size: .8rem;
   text-align: center;
 }
